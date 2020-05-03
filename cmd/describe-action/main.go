@@ -138,10 +138,10 @@ func (w *markdownTableWriter) writeTableInputs(inputs Inputs) {
 		}
 
 		if noTypes {
-			data = append(data, []string{name, input.Description, fmt.Sprintf("`%t`", input.Required), fmt.Sprintf("`%s`", inputDefault)})
+			data = append(data, []string{backtickString(name), input.Description, backtickBool(input.Required), backtickString(inputDefault)})
 			continue
 		}
-		data = append(data, []string{name, input.Description, fmt.Sprintf("`%s`", input.Type), fmt.Sprintf("`%t`", input.Required), fmt.Sprintf("`%s`", inputDefault)})
+		data = append(data, []string{backtickString(name), input.Description, backtickString(input.Type), backtickBool(input.Required), backtickString(inputDefault)})
 	}
 
 	sort.Slice(data, func(i, j int) bool {
@@ -171,10 +171,10 @@ func (w *markdownTableWriter) writeTableOutputs(outputs Outputs) {
 	data := make([][]string, 0, len(outputs))
 	for name, output := range outputs {
 		if noTypes {
-			data = append(data, []string{name, output.Description})
+			data = append(data, []string{backtickString(name), output.Description})
 			continue
 		}
-		data = append(data, []string{name, output.Description, fmt.Sprintf("`%s`", output.Type)})
+		data = append(data, []string{backtickString(name), output.Description, backtickString(output.Type)})
 	}
 
 	sort.Slice(data, func(i, j int) bool {
@@ -184,4 +184,12 @@ func (w *markdownTableWriter) writeTableOutputs(outputs Outputs) {
 	w.tw.AppendBulk(data)
 
 	w.tw.Render()
+}
+
+func backtickString(s string) string {
+	return fmt.Sprintf("`%s`", s)
+}
+
+func backtickBool(b bool) string {
+	return fmt.Sprintf("`%t`", b)
 }

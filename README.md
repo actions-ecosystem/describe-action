@@ -32,20 +32,20 @@ Usage of describe-action:
 
 ```console
 $ describe-action --yaml testdata/action.yml --input
-|     NAME     |                         DESCRIPTION                          | REQUIRED |          DEFAULT           |
-|--------------|--------------------------------------------------------------|----------|----------------------------|
-| github_token | A GitHub token.                                              | `true`   | `N/A`                      |
-| repo         | The owner and repository name. e.g.) Codertocat/Hello-World. | `false`  | `${{ github.repository }}` |
+|      NAME      |                         DESCRIPTION                          | REQUIRED |          DEFAULT           |
+|----------------|--------------------------------------------------------------|----------|----------------------------|
+| `github_token` | A GitHub token.                                              | `true`   | `N/A`                      |
+| `repo`         | The owner and repository name. e.g.) Codertocat/Hello-World. | `false`  | `${{ github.repository }}` |
 ```
 
 ```console
 $ describe-action --yaml testdata/action.yml --input --type
 ? Type of "inputs.github_token": string
 ? Type of "inputs.repo": string
-|     NAME     |                         DESCRIPTION                          |   TYPE   | REQUIRED |          DEFAULT           |
-|--------------|--------------------------------------------------------------|----------|----------|----------------------------|
-| github_token | A GitHub token.                                              | `string` | `true`   | `N/A`                      |
-| repo         | The owner and repository name. e.g.) Codertocat/Hello-World. | `string` | `false`  | `${{ github.repository }}` |
+|      NAME      |                         DESCRIPTION                          |   TYPE   | REQUIRED |          DEFAULT           |
+|----------------|--------------------------------------------------------------|----------|----------|----------------------------|
+| `github_token` | A GitHub token.                                              | `string` | `true`   | `N/A`                      |
+| `repo`         | The owner and repository name. e.g.) Codertocat/Hello-World. | `string` | `false`  | `${{ github.repository }}` |
 ```
 
 ## References
