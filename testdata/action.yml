@@ -1,0 +1,17 @@
+name: Example Action
+description: Do something
+author: The Actions Ecosystem Authors
+inputs:
+  github_token:
+    description: A GitHub token.
+    required: true
+  repo:
+    description: The owner and repository name. e.g.) Codertocat/Hello-World.
+    required: false
+    default: ${{ github.repository }}
+outputs:
+  result:
+    description: The result of the action.
+runs:
+  using: node12
+  main: dist/index.js
