@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"sort"
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/olekukonko/tablewriter"
@@ -143,6 +144,10 @@ func (w *markdownTableWriter) writeTableInputs(inputs Inputs) {
 		data = append(data, []string{name, input.Description, fmt.Sprintf("`%s`", input.Type), fmt.Sprintf("`%t`", input.Required), fmt.Sprintf("`%s`", inputDefault)})
 	}
 
+	sort.Slice(data, func(i, j int) bool {
+		return data[i][0] < data[j][0] // Sort data with input's name ascending alphabetically
+	})
+
 	w.tw.AppendBulk(data)
 
 	w.tw.Render()
@@ -171,6 +176,10 @@ func (w *markdownTableWriter) writeTableOutputs(outputs Outputs) {
 		}
 		data = append(data, []string{name, output.Description, fmt.Sprintf("`%s`", output.Type)})
 	}
+
+	sort.Slice(data, func(i, j int) bool {
+		return data[i][0] < data[j][0] // Sort data with output's name ascending alphabetically
+	})
 
 	w.tw.AppendBulk(data)
 

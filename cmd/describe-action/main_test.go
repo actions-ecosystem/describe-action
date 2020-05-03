@@ -92,11 +92,15 @@ func Test_markdownTableWriter_writeTableOutputs(t *testing.T) {
 					"result": {
 						Description: "The result of the action.",
 					},
+					"note": {
+						Description: "The note about the action.",
+					},
 				},
 			},
-			want: `|  NAME  |        DESCRIPTION        |
-|--------|---------------------------|
-| result | The result of the action. |
+			want: `|  NAME  |        DESCRIPTION         |
+|--------|----------------------------|
+| note   | The note about the action. |
+| result | The result of the action.  |
 `,
 		},
 		{
@@ -107,11 +111,16 @@ func Test_markdownTableWriter_writeTableOutputs(t *testing.T) {
 						Description: "The result of the action.",
 						Type:        valueTypeString,
 					},
+					"note": {
+						Description: "The note about the action.",
+						Type:        valueTypeString,
+					},
 				},
 			},
-			want: `|  NAME  |        DESCRIPTION        |   TYPE   |
-|--------|---------------------------|----------|
-| result | The result of the action. | ` + "`string`" + ` |
+			want: `|  NAME  |        DESCRIPTION         |   TYPE   |
+|--------|----------------------------|----------|
+| note   | The note about the action. | ` + "`string`" + ` |
+| result | The result of the action.  | ` + "`string`" + ` |
 `,
 		},
 	}
