@@ -31,10 +31,10 @@ func Test_markdownTableWriter_writeTableInputs(t *testing.T) {
 					},
 				},
 			},
-			want: `|     NAME     |                         DESCRIPTION                          | REQUIRED |          DEFAULT           |
-|--------------|--------------------------------------------------------------|----------|----------------------------|
-| github_token | A GitHub token.                                              | ` + "`true`" + `   | ` + "`N/A`" + `                      |
-| repo         | The owner and repository name. e.g.) Codertocat/Hello-World. | ` + "`false`" + `  | ` + "`${{ github.repository }}`" + ` |
+			want: `|      NAME      |                         DESCRIPTION                          | REQUIRED |          DEFAULT           |
+|----------------|--------------------------------------------------------------|----------|----------------------------|
+| ` + "`github_token`" + ` | A GitHub token.                                              | ` + "`true`" + `   | ` + "`N/A`" + `                      |
+| ` + "`repo`" + `         | The owner and repository name. e.g.) Codertocat/Hello-World. | ` + "`false`" + `  | ` + "`${{ github.repository }}`" + ` |
 `,
 		},
 		{
@@ -54,10 +54,10 @@ func Test_markdownTableWriter_writeTableInputs(t *testing.T) {
 					},
 				},
 			},
-			want: `|     NAME     |                         DESCRIPTION                          |   TYPE   | REQUIRED |          DEFAULT           |
-|--------------|--------------------------------------------------------------|----------|----------|----------------------------|
-| github_token | A GitHub token.                                              | ` + "`string`" + ` | ` + "`true`" + `   | ` + "`N/A`" + `                      |
-| repo         | The owner and repository name. e.g.) Codertocat/Hello-World. | ` + "`string`" + ` | ` + "`false`" + `  | ` + "`${{ github.repository }}`" + ` |
+			want: `|      NAME      |                         DESCRIPTION                          |   TYPE   | REQUIRED |          DEFAULT           |
+|----------------|--------------------------------------------------------------|----------|----------|----------------------------|
+| ` + "`github_token`" + ` | A GitHub token.                                              | ` + "`string`" + ` | ` + "`true`" + `   | ` + "`N/A`" + `                      |
+| ` + "`repo`" + `         | The owner and repository name. e.g.) Codertocat/Hello-World. | ` + "`string`" + ` | ` + "`false`" + `  | ` + "`${{ github.repository }}`" + ` |
 `,
 		},
 	}
@@ -97,10 +97,10 @@ func Test_markdownTableWriter_writeTableOutputs(t *testing.T) {
 					},
 				},
 			},
-			want: `|  NAME  |        DESCRIPTION         |
-|--------|----------------------------|
-| note   | The note about the action. |
-| result | The result of the action.  |
+			want: `|   NAME   |        DESCRIPTION         |
+|----------|----------------------------|
+| ` + "`note`" + `   | The note about the action. |
+| ` + "`result`" + ` | The result of the action.  |
 `,
 		},
 		{
@@ -117,10 +117,10 @@ func Test_markdownTableWriter_writeTableOutputs(t *testing.T) {
 					},
 				},
 			},
-			want: `|  NAME  |        DESCRIPTION         |   TYPE   |
-|--------|----------------------------|----------|
-| note   | The note about the action. | ` + "`string`" + ` |
-| result | The result of the action.  | ` + "`string`" + ` |
+			want: `|   NAME   |        DESCRIPTION         |   TYPE   |
+|----------|----------------------------|----------|
+| ` + "`note`" + `   | The note about the action. | ` + "`string`" + ` |
+| ` + "`result`" + ` | The result of the action.  | ` + "`string`" + ` |
 `,
 		},
 	}
