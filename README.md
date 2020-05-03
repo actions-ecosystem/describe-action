@@ -5,7 +5,7 @@
 [![pkg.go.dev][pkg.go.dev-badge]][pkg.go.dev]
 [![license][license-badge]][license]
 
-A CLI to generate a Markdown table from GitHub Actions metadata inputs and outputs in `action.yml'.
+A CLI to generate a Markdown table from GitHub Actions metadata inputs and outputs in `action.yml`.
 
 ## Installation
 
