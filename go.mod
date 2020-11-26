@@ -6,5 +6,5 @@ require (
 	github.com/AlecAivazis/survey/v2 v2.0.7
 	github.com/google/go-cmp v0.4.1
 	github.com/olekukonko/tablewriter v0.0.4
-	gopkg.in/yaml.v2 v2.3.0
+	gopkg.in/yaml.v2 v2.4.0
 )
